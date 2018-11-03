@@ -1,0 +1,4 @@
+package hotel;
+
+interface Period {
+}
