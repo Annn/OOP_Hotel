@@ -8,7 +8,7 @@ interface HotelInterface {
     void loadRooms(Reader reader);
     void saveRooms(Writer writer);
 
-    void addRooms(String name, int nOfBeds);
+    void addRoom(String name, int nOfPersons);
     void deleteRoom(String name);
 
     List<ReservationInfoInterface> findFreeRooms(PeriodInterface period, List<Integer> rooms);
