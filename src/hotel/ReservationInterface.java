@@ -1,0 +1,6 @@
+package hotel;
+
+interface ReservationInterface {
+
+
+}

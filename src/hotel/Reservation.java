@@ -1,4 +1,0 @@
-package hotel;
-
-interface Reservation {
-}

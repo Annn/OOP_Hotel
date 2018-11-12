@@ -1,5 +1,5 @@
 package hotel;
 
-interface RoomInfo {
+interface RoomInfoInterface {
     // nazwa pokoju i ilość ludzi w nim zakwaterowanych
 }

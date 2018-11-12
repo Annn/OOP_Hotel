@@ -1,5 +1,5 @@
 package hotel;
 
-interface Period {
+interface PeriodInterface {
     // okres rezerwacji od-do
 }

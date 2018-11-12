@@ -2,7 +2,7 @@ package hotel;
 
 import java.util.List;
 
-interface ReservationInfo {
-    Period getPeriod();
+interface ReservationInfoInterface {
+    PeriodInterface getPeriod();
     List<RoomInfo> getRoomInfo();
 }
