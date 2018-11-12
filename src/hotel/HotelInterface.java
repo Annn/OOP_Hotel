@@ -11,6 +11,7 @@ interface HotelInterface {
     void addRoom(String name, int nOfPersons);
     void deleteRoom(String name);
 
-    List<ReservationInfoInterface> findFreeRooms(PeriodInterface period, List<Integer> rooms);
+    List<ReservationInfoInterface> findFreeRooms(PeriodInterface period,
+                                                 List<Integer> rooms);
     boolean makeReservation(ClientInterface client, ReservationInfoInterface request);
 }

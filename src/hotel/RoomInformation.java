@@ -1,11 +1,11 @@
 package hotel;
 
-public class RoomInfo implements RoomInfoInterface {
+public class RoomInformation implements RoomInfoInterface {
 
     String name;
     int numberOfPersons;
 
-    public RoomInfo(String name, int nOfPersons) {
+    public RoomInformation(String name, int nOfPersons) {
         this.name = name;
         this.numberOfPersons = nOfPersons;
     }

@@ -10,31 +10,26 @@ System powinien umożliwiać:
 *   Wyświetlanie informacji o rezerwacji
 *   Wyświetlanie informacji o gościach hotelowych
 *   Dodawanie/ usuwanie pokoi
-*   Dodawanie/ usuwanie użytkowników
+*   Dodawanie/ usuwanie użytkowników (???)
 
 
 Wszystkie informacje mają być przechowywane persystentnie w postaci plików CSV
 (Coma Separated Values).
 
-
 Fasadą do systemu  jest klasa `Hotel` udostępniająca następujący interfejs:
-
 ````
 interface Hotel {
-
     void loadRooms(Reader reader);
     void saveRooms(Writer writer);
     void addRoom(String name, int nOfBeds);
     void deleteRoom(String name);
-
     // rooms jest listą liczb określających ile osób chcemy zakwaterować w pokoju
     // np.: { 1, 2} oznacza, że potrzebujemy pokoju dla jednej osoby
     // i drugiego pokoju dla dwu osób.
-    void List<ReservationInfo>  findFreeRooms(Period period, List<Integer> rooms);
+    List<ReservationInfo>  findFreeRooms(Period period, List<Integer> rooms);
     boolean makeReservation(Client client,  ReservationInfo request);
 }
 ````
-
 ````
 interface ReservationInfo {
     Period getPeriod();
@@ -44,11 +39,9 @@ interface ReservationInfo {
 // okres rezerwacji od-do
 interface Period {
 }
-
 // nazwa pokoju i ilość ludzi w nim zakwaterowanych
 interface RoomInfo {
 }
-
 interface Reservation {
 }
 ````
@@ -66,5 +59,6 @@ Recepcjonista (administrator) musi również mieć możliwość usuwania rezerwa
 (np. w przypadku braku możliwości potwierdzenia danych osobowych).
 
 Program musi być przetestowany (należy napisać odpowiednie testy jednostkowe).
+
 Należy zastosować dowolny wzorzec projektowy
 (lub kilka wzorców, ale nie więcej niż 3).
