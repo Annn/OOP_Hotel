@@ -1,0 +1,70 @@
+# System rezerwacji w hotelu
+
+W tym ćwiczeniu mają Państwo za zadanie napisać prosty system rezerwacji dla hotelu.
+System powinien umożliwiać:
+
+*   Wyszukiwanie wolnych pokoi zgodnie z zadanymi kryteriami
+*   Dokonywanie rezerwacji
+*   Wyszukiwanie rezerwacji
+*   Usuwanie rezerwacji
+*   Wyświetlanie informacji o rezerwacji
+*   Wyświetlanie informacji o gościach hotelowych
+*   Dodawanie/ usuwanie pokoi
+*   Dodawanie/ usuwanie użytkowników
+
+
+Wszystkie informacje mają być przechowywane persystentnie w postaci plików CSV
+(Coma Separated Values).
+
+
+Fasadą do systemu  jest klasa `Hotel` udostępniająca następujący interfejs:
+
+````
+interface Hotel {
+
+    void loadRooms(Reader reader);
+    void saveRooms(Writer writer);
+    void addRoom(String name, int nOfBeds);
+    void deleteRoom(String name);
+
+    // rooms jest listą liczb określających ile osób chcemy zakwaterować w pokoju
+    // np.: { 1, 2} oznacza, że potrzebujemy pokoju dla jednej osoby
+    // i drugiego pokoju dla dwu osób.
+    void List<ReservationInfo>  findFreeRooms(Period period, List<Integer> rooms);
+    boolean makeReservation(Client client,  ReservationInfo request);
+}
+````
+
+````
+interface ReservationInfo {
+    Period getPeriod();
+    List<RoomInfo> getRoomsInfo();
+}
+````
+// okres rezerwacji od-do
+interface Period {
+}
+
+// nazwa pokoju i ilość ludzi w nim zakwaterowanych
+interface RoomInfo {
+}
+
+interface Reservation {
+}
+````
+
+System musi również uwzględniać
+ • rabaty na rezerwacje dokonywane z wyprzedzeniem
+ • zróżnicowane ceny pokoi w zależności od sezonu bądź okazjonalnego wydarzenia.
+
+Cena zależy od wielkości pokoju (ilości miejsc) oraz od „komfortu” danego pokoju.
+Stali klienci również mają zniżki na korzystanie z pokoi.
+
+Rezerwacji może dokonać klient oraz recepcjonista
+(np. na telefoniczne polecenie klienta).
+Recepcjonista (administrator) musi również mieć możliwość usuwania rezerwacji
+(np. w przypadku braku możliwości potwierdzenia danych osobowych).
+
+Program musi być przetestowany (należy napisać odpowiednie testy jednostkowe).
+Należy zastosować dowolny wzorzec projektowy
+(lub kilka wzorców, ale nie więcej niż 3).
