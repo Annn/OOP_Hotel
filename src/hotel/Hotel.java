@@ -42,7 +42,11 @@ public class Hotel implements HotelInterface {
     }
 
     public void deleteRoom(String name) {
-
+        for (int i = 0; i < rooms.size(); i++){
+            if (rooms.get(i).name == name){
+                rooms.remove(i);
+            }
+        }
     }
 
     public List<ReservationInfoInterface> findFreeRooms(PeriodInterface period,
