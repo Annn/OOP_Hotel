@@ -13,9 +13,10 @@ public class RoomInformation implements RoomInfoInterface {
     public String getName() {
         return this.name;
     }
-
     public int getNumberOfPersons() {
         return this.numberOfPersons;
     }
+
+
 
 }

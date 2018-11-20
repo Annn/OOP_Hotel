@@ -34,28 +34,31 @@ public class Main {
 //            System.out.println(e.getCause());
 //        }
 
-        try {
-            fw = new FileWriter("clients.csv");
-            fr = new FileReader("clients.csv");
+//        try {
+//            fw = new FileWriter("clients.csv");
+//            fr = new FileReader("clients.csv");
+//
+//            Client client = new Client();
+//
+//            client.addClient("ann", "vas", "female", "bla");
+//            client.addClient("vit", "nau", "male", "blas");
+//            client.addClient("test", "test", "male", "test");
+//
+////            client.deleteClient("test", "test");
+//
+//            client.saveClients(fw);
+//            fw.close();
+//
+//            client.loadClients(fr);
+//            fr.close();
+//        }
+//        catch (Exception e) {
+//            System.out.println("ERROR");
+//            System.out.println(e.getMessage());
+//            System.out.println(e.getCause());
+//        }
 
-            Client client = new Client();
-
-            client.addClient("ann", "vas", "female", "bla");
-            client.addClient("vit", "nau", "male", "blas");
-            client.addClient("test", "test", "male", "test");
-
-//            client.deleteClient("test", "test");
-
-            client.saveClients(fw);
-            fw.close();
-
-            client.loadClients(fr);
-            fr.close();
-        }
-        catch (Exception e) {
-            System.out.println("ERROR");
-            System.out.println(e.getMessage());
-            System.out.println(e.getCause());
-        }
+        ReservationPeriod period = new ReservationPeriod(2018, 10, 10, 2018, 10, 22);
+        System.out.println(period.getPeriod() + " " + period.getDays() + " days");
     }
 }

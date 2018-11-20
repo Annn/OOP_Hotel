@@ -28,8 +28,8 @@ public class Client implements ClientInterface {
     public String getLastName() { return lastName; }
     public String getSex() { return sex; }
     public String getAddress() { return address; }
-    public void loadClients(Reader reader) {
 
+    public void loadClients(Reader reader) {
         Scanner scanner = new Scanner(reader);
         while (scanner.hasNextLine()) {
             String[] clientData = scanner.nextLine().split(",");

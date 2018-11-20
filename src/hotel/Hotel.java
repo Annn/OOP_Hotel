@@ -52,6 +52,14 @@ public class Hotel implements HotelInterface {
     public List<ReservationInfoInterface> findFreeRooms(PeriodInterface period,
                                                         List<Integer> rooms) {
         List<ReservationInfoInterface> rii = new ArrayList<>();
+        for (RoomInformation room : this.rooms) {
+            for (Integer r : rooms) {
+                if (room.numberOfPersons == r){
+
+                }
+
+            }
+        }
         return rii;
     }
 
