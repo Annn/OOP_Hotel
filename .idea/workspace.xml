@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c33a54c8-91f8-498b-8168-45d59dd2f7c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/PeriodInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/PeriodInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/ReservationPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/ReservationPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/RoomInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/RoomInformation.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,14 +27,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1493" />
-          <entry key="txt" value="26" />
+          <entry key="java" value="1494" />
+          <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1493" />
-          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="JAVA" value="1494" />
+          <entry key="PLAIN_TEXT" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -84,19 +77,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hotel/ReservationPeriod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -193,8 +183,8 @@
         <option value="$PROJECT_DIR$/src/hotel/Period.java" />
         <option value="$PROJECT_DIR$/src/hotel/PeriodInterface.java" />
         <option value="$PROJECT_DIR$/src/hotel/Reservation.java" />
-        <option value="$PROJECT_DIR$/src/hotel/ReservationPeriod.java" />
         <option value="$PROJECT_DIR$/src/hotel/Main.java" />
+        <option value="$PROJECT_DIR$/src/hotel/ReservationPeriod.java" />
       </list>
     </option>
   </component>
@@ -246,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542747553951" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542747820089" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -286,7 +276,7 @@
       <updated>1542017105007</updated>
       <workItem from="1542017108427" duration="11659000" />
       <workItem from="1542126047864" duration="7462000" />
-      <workItem from="1542471847833" duration="10558000" />
+      <workItem from="1542471847833" duration="10828000" />
     </task>
     <task id="LOCAL-00001" summary="Client class functionality">
       <created>1542132870716</created>
@@ -295,11 +285,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542132870716</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ReservationPeriod class implementation">
+      <created>1542747683673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542747683673</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30799000" />
+    <option name="totallyTimeSpent" value="31069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="200" y="23" width="1164" height="822" extended-state="0" />
@@ -310,7 +307,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24598931" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24598931" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32876712" />
@@ -319,7 +316,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50297177" side_tool="true" weight="0.23424658" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49702823" visible="true" weight="0.23424658" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49702823" visible="true" weight="0.23424658" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49960095" weight="0.3479452" />
@@ -345,7 +342,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Client class functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client class functionality" />
+    <MESSAGE value="ReservationPeriod class implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReservationPeriod class implementation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/task.txt">
@@ -472,20 +470,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/ReservationPeriod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="60" column="83" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/ReservationPeriod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
