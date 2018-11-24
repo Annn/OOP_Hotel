@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args){
 
-        FileReader fr;
-        FileWriter fw;
+//        FileReader fr;
+//        FileWriter fw;
 
 //        try {
 //            fw = new FileWriter("hotel.csv");
@@ -34,6 +34,8 @@ public class Main {
 //            System.out.println(e.getCause());
 //        }
 
+
+//        CLIENT class test
 //        try {
 //            fw = new FileWriter("clients.csv");
 //            fr = new FileReader("clients.csv");
@@ -58,7 +60,25 @@ public class Main {
 //            System.out.println(e.getCause());
 //        }
 
+
+//        ReservationPeriod test
         ReservationPeriod period = new ReservationPeriod(2018, 10, 10, 2018, 10, 22);
         System.out.println(period.getPeriod() + " " + period.getDays() + " days");
+
+
+//        RoomCostDecorator test
+//        RoomCost room = new LuxRoom(new RoomInformation("66", 2));
+//        System.out.println(room.getDescription() + " costs " + room.cost());
+//
+//        room = new SeasonalDiscount(room);
+//        System.out.println(room.getDescription() + " costs " + room.cost());
+//
+//        RoomCost room2 = new StandardRoom(new RoomInformation("66", 3));
+//        System.out.println(room2.getDescription() + " costs " + room2.cost());
+//
+//        room2 = new SeasonalDiscount(room2);
+//        System.out.println(room2.getDescription() + " costs " + room2.cost());
+//        room2 = new RegularCustomerDiscount(room2);
+//        System.out.println(room2.getDescription() + " costs " + room2.cost());
     }
 }

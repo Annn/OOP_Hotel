@@ -43,7 +43,7 @@ public class Hotel implements HotelInterface {
 
     public void deleteRoom(String name) {
         for (int i = 0; i < rooms.size(); i++){
-            if (rooms.get(i).name == name){
+            if (rooms.get(i).getName() == name){
                 rooms.remove(i);
             }
         }
@@ -54,7 +54,7 @@ public class Hotel implements HotelInterface {
         List<ReservationInfoInterface> rii = new ArrayList<>();
         for (RoomInformation room : this.rooms) {
             for (Integer r : rooms) {
-                if (room.numberOfPersons == r){
+                if (room.getNumberOfPersons() == r){
 
                 }
 

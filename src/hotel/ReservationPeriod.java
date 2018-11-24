@@ -16,7 +16,7 @@ public class ReservationPeriod implements PeriodInterface {
         this.outDate = LocalDate.of(y2, m2, d2);;
     }
 
-    @Override
+
     public ArrayList<LocalDate> getPeriod() {
         period.add(inDate);
         period.add(outDate);
@@ -24,7 +24,7 @@ public class ReservationPeriod implements PeriodInterface {
     }
 
     public long getDays(){
-        Period p = Period.between(inDate, outDate);
+//        Period p = Period.between(inDate, outDate);
         long p2 = ChronoUnit.DAYS.between(inDate, outDate);
         return p2;
     }
