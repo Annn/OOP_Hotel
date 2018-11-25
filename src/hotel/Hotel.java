@@ -2,7 +2,9 @@ package hotel;
 
 import java.io.Reader;
 import java.io.Writer;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,6 +15,7 @@ public class Hotel implements HotelInterface {
     private List<RoomInformation> rooms;
     private List<Reservation> reservations;
     private List<Client> clients;
+    private HashMap<Integer, ArrayList<ReservationPeriod>> roomPeriods;
     private int roomsID = 0;
     private int clientsID = 0;
     private int reservationsID = 0;
@@ -21,6 +24,7 @@ public class Hotel implements HotelInterface {
         rooms = new ArrayList<>();
         reservations = new ArrayList<>();
         clients = new ArrayList<>();
+        roomPeriods = new HashMap<>();
     }
 
     public static Hotel getInstance() {
@@ -55,6 +59,7 @@ public class Hotel implements HotelInterface {
 
     public void addRoom(String name, int nOfPersons) {
         rooms.add(new RoomInformation(++this.roomsID, name, nOfPersons));
+        roomPeriods.put(this.roomsID, new ArrayList<>());
     }
 
     public void deleteRoom(String name) {
@@ -70,45 +75,87 @@ public class Hotel implements HotelInterface {
 
     public void deleteRoom(int id) {
         // deletes the room with the given ID
-        RoomInformation roomToRemove = null;
+        RoomInformation roomToRemove = getRoom(id);
+        if (!roomToRemove.equals(null)) rooms.remove(roomToRemove);
+    }
+
+    private RoomInformation getRoom(int id) {
+        RoomInformation room = null;
         for (int i = 0; i < rooms.size(); i++) {
             if (rooms.get(i).getID() == id) {
-                roomToRemove = rooms.get(i);
+                room = rooms.get(i);
+                break;
             }
         }
-        if (!roomToRemove.equals(null)) rooms.remove(roomToRemove);
+        return room;
+    }
+
+    private boolean roomIsFree(int id, PeriodInterface period) {
+
+        boolean isFree = true;
+
+        LocalDate inDate = period.getPeriod().get(0);
+        LocalDate outDate = period.getPeriod().get(1);
+
+        ArrayList<ReservationPeriod> rPeriods = roomPeriods.get(id);
+        for (ReservationPeriod rp : rPeriods) {
+            LocalDate rInDate = rp.getPeriod().get(0);
+            LocalDate rOutDate = rp.getPeriod().get(1);
+            if (!(inDate.isAfter(rOutDate) || outDate.isBefore(rInDate))) {
+                isFree = false;
+            }
+        }
+
+        return isFree;
     }
 
     public List<ReservationInfoInterface> findFreeRooms(PeriodInterface period,
                                                         List<Integer> rooms) {
+        // list of available rooms for the given period
         List<ReservationInfoInterface> rii = new ArrayList<>();
-        // choose rooms that fit to the given description
-        List<RoomInformation> fittingRooms = new ArrayList<>();
+
+        // choose rooms that fit to the given number of persons
+        List<Integer> fittingRoomsID = new ArrayList<>();
         for (RoomInformation room : this.rooms) {
             for (Integer r : rooms) {
                 if (room.getNumberOfPersons() == r) {
-                    fittingRooms.add(room);
+                    fittingRoomsID.add(room.getID());
                 }
             }
         }
         // check if periods are available
+        for (Integer id : fittingRoomsID) {
+            if (roomIsFree(id, period))
+                rii.add(new ReservationInformation(
+                                (ReservationPeriod) period,
+                                getRoom(id)
+                            )
+                );
+        }
 
         return rii;
     }
 
     public boolean makeReservation(Client client,
                                    ReservationInfoInterface request) {
-        //
 
-        this.reservations.add(
-                new Reservation(
-                        ++this.reservationsID,
-                        client,
-                        (ReservationInformation) request
-                )
-        );
+        boolean isReserved = false;
+        // get information from the request
+        ReservationPeriod rPeriod = (ReservationPeriod)request.getPeriod();
+        int roomID = request.getRoomInfo().getID();
 
-        return true;
+        if (roomIsFree(roomID, rPeriod)) {
+            this.reservations.add(
+                    new Reservation(
+                            ++this.reservationsID,
+                            client,
+                            (ReservationInformation)request
+                    )
+            );
+            isReserved = true;
+        }
+
+        return isReserved;
     }
 
     public List<Client> getGuests() {

@@ -1,26 +1,23 @@
 package hotel;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ReservationInformation implements ReservationInfoInterface {
 
     private ReservationPeriod period;
-    private List<RoomInfoInterface> roomsInformation;
+    private RoomInfoInterface roomInformation;
 
     public ReservationInformation(ReservationPeriod period,
-                                  List<RoomInfoInterface> ri) {
-        this.roomsInformation = new ArrayList<>();
+                                  RoomInfoInterface ri) {
         this.period = period;
-        this.roomsInformation = ri;
+        this.roomInformation = ri;
     }
 
     public PeriodInterface getPeriod() {
         return this.period;
     }
 
-    public List<RoomInfoInterface> getRoomsInfo() {
-        return this.roomsInformation;
+    public RoomInfoInterface getRoomInfo() {
+        return this.roomInformation;
     }
 
 }
