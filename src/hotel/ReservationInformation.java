@@ -20,4 +20,9 @@ public class ReservationInformation implements ReservationInfoInterface {
         return this.roomInformation;
     }
 
+    public void showInformation() {
+        System.out.println(roomInformation.toString());
+        System.out.println("Reserved: " + period.toString());
+    }
+
 }

@@ -2,6 +2,7 @@ import hotel.*;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 
 
 public class Main {
@@ -56,8 +57,8 @@ public class Main {
             hotel.saveRooms(fw);
             fw.close();
 
-            hotel.loadRooms(fr);
-            fr.close();
+            //hotel.loadRooms(fr);
+            //fr.close();
 
             //
             hotel.makeReservation(admin, ri1);
@@ -66,21 +67,21 @@ public class Main {
             hotel.showAllReservations();
             hotel.showGuests();
 
+            ArrayList<Integer> roomsNumber = new ArrayList<>();
+            roomsNumber.add(1); roomsNumber.add(3);
+
+            //
+            hotel.findFreeRooms(new ReservationPeriod(
+                    2018, 11, 20,
+                    2018,12, 2),
+                    roomsNumber);
+
         }
         catch (Exception e) {
             System.out.println("ERROR");
             System.out.println(e.getMessage());
             System.out.println(e.getCause());
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

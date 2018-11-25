@@ -8,5 +8,5 @@ interface RoomInfoInterface {
     String getName();
     // maximum number of persons in the room
     int getNumberOfPersons();
-
+    String toString();
 }

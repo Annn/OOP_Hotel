@@ -1,7 +1,7 @@
 package hotel;
 
 public class EarlyReservationDiscount extends RoomCostDecorator {
-//    Discount for early reservation
+    // Discount for early reservation
 
     RoomCost room;
 

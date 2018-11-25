@@ -21,4 +21,9 @@ public class RoomInformation implements RoomInfoInterface {
         return this.numberOfPersons;
     }
 
+    public String toString() {
+        return "Room: #" + roomID + ", name: " +
+                name + ", persons: " + numberOfPersons;
+    }
+
 }

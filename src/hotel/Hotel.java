@@ -132,6 +132,10 @@ public class Hotel implements HotelInterface {
                 );
         }
 
+        for (ReservationInfoInterface info : rii) {
+            info.showInformation();
+        }
+
         return rii;
     }
 
@@ -153,6 +157,10 @@ public class Hotel implements HotelInterface {
             if (!clients.contains(client))
                 this.clients.add(client);
             isReserved = true;
+            System.out.println("Room " + roomID + " is reserved.");
+        }
+        else {
+            System.out.println("Room " + roomID + " is not free.");
         }
         return isReserved;
     }

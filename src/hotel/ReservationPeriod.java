@@ -24,4 +24,9 @@ public class ReservationPeriod implements PeriodInterface {
     public long getDaysOfStay() {
         return ChronoUnit.DAYS.between(inDate, outDate);
     }
+
+    public String toString() {
+        return "from " + inDate + " to " + outDate;
+    }
+
 }

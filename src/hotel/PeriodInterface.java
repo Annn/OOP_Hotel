@@ -6,5 +6,6 @@ import java.util.ArrayList;
 interface PeriodInterface {
 
     ArrayList<LocalDate> getPeriod();
+    String toString();
 
 }
