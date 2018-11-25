@@ -17,7 +17,6 @@ public class Hotel implements HotelInterface {
     private List<Client> clients;
     private HashMap<Integer, ArrayList<ReservationPeriod>> roomPeriods;
     private int roomsID = 0;
-    private int clientsID = 0;
     private int reservationsID = 0;
 
     private Hotel() {
@@ -43,7 +42,7 @@ public class Hotel implements HotelInterface {
             String name = roomData[0].trim();
             int nOfPersons = Integer.parseInt(roomData[1].trim());
             this.addRoom(name, nOfPersons);
-            System.out.println(name + ": " + nOfPersons);
+            //System.out.println(name + ": " + nOfPersons);
         }
     }
 
@@ -138,12 +137,11 @@ public class Hotel implements HotelInterface {
 
     public boolean makeReservation(Client client,
                                    ReservationInfoInterface request) {
-
         boolean isReserved = false;
         // get information from the request
         ReservationPeriod rPeriod = (ReservationPeriod)request.getPeriod();
+        //
         int roomID = request.getRoomInfo().getID();
-
         if (roomIsFree(roomID, rPeriod)) {
             this.reservations.add(
                     new Reservation(
@@ -152,19 +150,76 @@ public class Hotel implements HotelInterface {
                             (ReservationInformation)request
                     )
             );
+            if (!clients.contains(client))
+                this.clients.add(client);
             isReserved = true;
         }
-
         return isReserved;
     }
 
-    public List<Client> getGuests() {
-        List<Client> guests = new ArrayList<>();
+    public Reservation getReservation(int id) {
+        Reservation r = null;
+        for (Reservation reservation : this.reservations) {
+            if (reservation.getID() == id) {
+                r = reservation;
+            }
+        }
+        return r;
+    }
+
+    public void showReservation(int id) {
+        Reservation r = getReservation(id);
+        if (!r.equals(null)) {
+            System.out.println("Reservation #" + id);
+            System.out.println("Client: " +
+                    r.getClient().getFirstName() + " " +
+                    r.getClient().getLastName() + " (" +
+                    r.getClient().getID() + ").");
+            System.out.println("Room: " +
+                    r.getInformation().getRoomInfo().getName() + " [" +
+                    r.getInformation().getRoomInfo().getNumberOfPersons() +
+                    " person(s)]: from " +
+                    r.getInformation().getPeriod().getPeriod().get(0) + " to " +
+                    r.getInformation().getPeriod().getPeriod().get(1) + ".");
+            System.out.println();
+        }
+
+    }
+
+    public void showAllReservations() {
+        for (Reservation r : this.reservations) {
+            showReservation(r.getID());
+        }
+    }
+
+    public void cancelReservation(Client client, int id) {
+        // only administrators could remove a reservation
+        if (client.getType().equals("administrator")) {
+            Reservation reservation = getReservation(id);
+            if (!reservation.equals(null))
+                this.reservations.remove(reservation);
+        }
+    }
+
+    public ArrayList<Client> getGuests() {
+        ArrayList<Client> guests = new ArrayList<>();
         for (Client client : this.clients) {
             if (client.getType() == "guest")
                 guests.add(client);
         }
         return guests;
     }
+
+    public void showGuests() {
+        ArrayList<Client> guests = getGuests();
+        for (Client guest : guests) {
+            System.out.println("Guest [" + guest.getID() + "]: " +
+                    guest.getFirstName() + " " + guest.getLastName() + ", " +
+                    guest.getSex() + ".");
+            System.out.println("Address: " + guest.getAddress());
+            System.out.println();
+        }
+    }
+
 
 }
