@@ -20,22 +20,22 @@ public class RegularCustomerDiscountTest {
 
     @Before
     public void initialize() {
-        luxRoom1 = new LuxRoom(new RoomInformation("66", 1));
+        luxRoom1 = new LuxRoom(new RoomInformation(1, "66", 1));
         luxRoom1 = new RegularCustomerDiscount(luxRoom1);
 
-        luxRoom2 = new LuxRoom(new RoomInformation("66", 2));
+        luxRoom2 = new LuxRoom(new RoomInformation(2, "66", 2));
         luxRoom2 = new RegularCustomerDiscount(luxRoom2);
 
-        luxRoom3 = new LuxRoom(new RoomInformation("66", 3));
+        luxRoom3 = new LuxRoom(new RoomInformation(3, "66", 3));
         luxRoom3 = new RegularCustomerDiscount(luxRoom3);
 
-        standardRoom1 = new StandardRoom(new RoomInformation("5", 1));
+        standardRoom1 = new StandardRoom(new RoomInformation(4, "5", 1));
         standardRoom1 = new RegularCustomerDiscount(standardRoom1);
 
-        standardRoom2 = new StandardRoom(new RoomInformation("5", 2));
+        standardRoom2 = new StandardRoom(new RoomInformation(5, "5", 2));
         standardRoom2 = new RegularCustomerDiscount(standardRoom2);
 
-        standardRoom3 = new StandardRoom(new RoomInformation("5", 3));
+        standardRoom3 = new StandardRoom(new RoomInformation(6, "5", 3));
         standardRoom3 = new RegularCustomerDiscount(standardRoom3);
     }
 

@@ -13,5 +13,5 @@ interface HotelInterface {
 
     List<ReservationInfoInterface> findFreeRooms(PeriodInterface period,
                                                  List<Integer> rooms);
-    boolean makeReservation(ClientInterface client, ReservationInfoInterface request);
+    boolean makeReservation(Client client, ReservationInfoInterface request);
 }

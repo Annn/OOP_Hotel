@@ -11,13 +11,13 @@ public class SeasonalDiscountTest {
     RoomCost room3; // 3-person room
 
     @Before public void initialize() {
-        room1 = new LuxRoom(new RoomInformation("66", 1));
+        room1 = new LuxRoom(new RoomInformation(1, "66", 1));
         room1 = new SeasonalDiscount(room1);
 
-        room2 = new LuxRoom(new RoomInformation("66", 2));
+        room2 = new LuxRoom(new RoomInformation(2, "66", 2));
         room2 = new SeasonalDiscount(room2);
 
-        room3 = new LuxRoom(new RoomInformation("66", 3));
+        room3 = new LuxRoom(new RoomInformation(3, "66", 3));
         room3 = new SeasonalDiscount(room3);
     }
     @Test

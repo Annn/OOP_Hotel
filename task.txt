@@ -16,9 +16,9 @@ System powinien umożliwiać:
 Wszystkie informacje mają być przechowywane persystentnie w postaci plików CSV
 (Coma Separated Values).
 
-Fasadą do systemu  jest klasa `Hotel` udostępniająca następujący interfejs:
+Fasadą do systemu  jest klasa `hotel.RoomInformation.Hotel` udostępniająca następujący interfejs:
 ````
-interface Hotel {
+interface hotel.RoomInformation.Hotel {
     void loadRooms(Reader reader);
     void saveRooms(Writer writer);
     void addRoom(String name, int nOfBeds);

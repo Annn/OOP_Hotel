@@ -1,9 +1,10 @@
 package hotel;
 
 interface RoomInfoInterface {
-    // nazwa pokoju i ilość ludzi w nim zakwaterowanych
 
+    // the room name
     String getName();
+    // maximum number of persons in the room
     int getNumberOfPersons();
 
 }

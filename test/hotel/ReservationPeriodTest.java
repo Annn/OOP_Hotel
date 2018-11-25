@@ -25,7 +25,7 @@ public class ReservationPeriodTest {
 
     @Test
     public void getDays() {
-        Long actual = period.getDays();
+        Long actual = period.getDaysOfStay();
         Long expected = Long.valueOf(12);
         assertEquals(expected, actual);
     }
