@@ -31,14 +31,24 @@ public class Main {
                 "F",
                 "KRK");
 
+        Client client3 = new Guest(3,
+                "Name3",
+                "Surname3",
+                "F",
+                "KRK");
+
         ReservationInformation ri1 = new ReservationInformation(
                 new ReservationPeriod(2018, 10, 1, 2018, 10, 5),
                 new RoomInformation(1, "room#1", 1));
         ReservationInformation ri2 = new ReservationInformation(
-                new ReservationPeriod(2018, 10, 26, 2018, 10, 29),
+                new ReservationPeriod(2018, 10, 3, 2018, 10, 7),
                 new RoomInformation(1, "room#1", 1));
         ReservationInformation ri3 = new ReservationInformation(
                 new ReservationPeriod(2018, 11, 25, 2018, 11, 29),
+                new RoomInformation(2, "room#2", 2));
+
+        ReservationInformation ri4 = new ReservationInformation(
+                new ReservationPeriod(2018, 3, 25, 2018, 3, 29),
                 new RoomInformation(2, "room#2", 2));
 
         try {
@@ -65,6 +75,7 @@ public class Main {
             hotel.makeReservation(admin, ri1);
             hotel.makeReservation(client1, ri2);
             hotel.makeReservation(client2, ri3);
+            hotel.makeReservation(client3, ri4);
 
             hotel.showAllReservations();
             hotel.showGuests();

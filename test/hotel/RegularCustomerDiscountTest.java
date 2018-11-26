@@ -9,14 +9,8 @@ public class RegularCustomerDiscountTest {
 //    Tests for description and cost for Lux and Regular rooms
 //    for 1, 2 or 3 persons
 
-    RoomCost luxRoom1; // 1-person lux room
-    RoomCost luxRoom2; // 2-person lux room
-    RoomCost luxRoom3; // 3-person lux room
-
-    RoomCost standardRoom1; // 1-person standard room
-    RoomCost standardRoom2; // 2-person standard room
-    RoomCost standardRoom3; // 3-person standard room
-
+    RoomCost luxRoom1, luxRoom2, luxRoom3; // 1, 2 and 3-person lux room
+    RoomCost standardRoom1, standardRoom2, standardRoom3; // 1, 2 and 3-person standard room
 
     @Before
     public void initialize() {

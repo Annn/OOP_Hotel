@@ -1,6 +1,7 @@
 package hotel;
 
 import java.time.Month;
+import java.time.Period;
 
 public class SeasonalDiscount extends RoomCostDecorator {
 //    Discount on reservations for period from october to april
@@ -8,8 +9,9 @@ public class SeasonalDiscount extends RoomCostDecorator {
     RoomCost room;
     PeriodInterface period;
 
-    public SeasonalDiscount(RoomCost room){
+    public SeasonalDiscount(RoomCost room, ReservationPeriod period){
         this.room = room;
+        this.period =  period;
     }
 
     @Override
@@ -20,8 +22,8 @@ public class SeasonalDiscount extends RoomCostDecorator {
     @Override
     public int cost() {
         int cost = room.cost();
-        Month month = this.period.getPeriod().get(0).getMonth();
-        if (month.equals(11) || month.equals(12) || month.equals(1) || month.equals(2) || month.equals(3)){
+        int month = this.period.getPeriod().get(0).getMonth().getValue();
+        if (month == 11 || month == 12 || month == 1 || month == 2 || month == 3){
             return (int)(cost * 0.75);
         }
         else { return cost; }

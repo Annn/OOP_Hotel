@@ -22,7 +22,10 @@ public class ReservationInformationTest {
         ri2 = new ReservationInformation(rPeriod, roomInfo2);
     }
     @Test
-    public void getRoomCostTest() {
+    public void getLuxRoomCostTest() {
+//        cost for LUX or STANDARD room per day
+//        1-person rooms
+
 //        int actual1 = ri.getRoomCost("lux");
 //        int expected1 = 150;
 //        assertEquals(expected1, actual1);
@@ -31,13 +34,14 @@ public class ReservationInformationTest {
 //        int expected2 = 100;
 //        assertEquals(expected2, actual2);
 
+//        2-person rooms
         int actual1 = ri2.getRoomCost("lux");
         int expected1 = 170;
-//        assertEquals(expected1, actual1);
+        assertEquals(expected1, actual1);
 
         int actual2 = ri2.getRoomCost("standard");
         int expected2 = 130;
-        assertEquals(expected2, actual2);
+//        assertEquals(expected2, actual2);
 
     }
 }
