@@ -30,11 +30,12 @@ public class Main {
                 "Surname2",
                 "F",
                 "KRK");
+
         ReservationInformation ri1 = new ReservationInformation(
-                new ReservationPeriod(2018, 12, 1, 2018, 12, 5),
+                new ReservationPeriod(2018, 10, 1, 2018, 10, 5),
                 new RoomInformation(1, "room#1", 1));
         ReservationInformation ri2 = new ReservationInformation(
-                new ReservationPeriod(2018, 11, 26, 2018, 12, 2),
+                new ReservationPeriod(2018, 10, 26, 2018, 10, 29),
                 new RoomInformation(1, "room#1", 1));
         ReservationInformation ri3 = new ReservationInformation(
                 new ReservationPeriod(2018, 11, 25, 2018, 11, 29),
@@ -64,6 +65,7 @@ public class Main {
             hotel.makeReservation(admin, ri1);
             hotel.makeReservation(client1, ri2);
             hotel.makeReservation(client2, ri3);
+
             hotel.showAllReservations();
             hotel.showGuests();
 
@@ -76,6 +78,7 @@ public class Main {
                     2018,12, 2),
                     roomsNumber);
 
+            ri1.getRoomCost("lux");
         }
         catch (Exception e) {
             System.out.println("ERROR");

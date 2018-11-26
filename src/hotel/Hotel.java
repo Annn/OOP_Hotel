@@ -100,7 +100,7 @@ public class Hotel implements HotelInterface {
         for (ReservationPeriod rp : rPeriods) {
             LocalDate rInDate = rp.getPeriod().get(0);
             LocalDate rOutDate = rp.getPeriod().get(1);
-            if (!(inDate.isAfter(rOutDate) || outDate.isBefore(rInDate))) {
+            if (!inDate.isAfter(rOutDate) || !outDate.isBefore(rInDate)) {
                 isFree = false;
             }
         }
@@ -131,7 +131,7 @@ public class Hotel implements HotelInterface {
                             )
                 );
         }
-
+        //  Print the result
         for (ReservationInfoInterface info : rii) {
             info.showInformation();
         }
@@ -156,6 +156,7 @@ public class Hotel implements HotelInterface {
             );
             if (!clients.contains(client))
                 this.clients.add(client);
+            roomPeriods.get(roomID).add(rPeriod);
             isReserved = true;
             System.out.println("Room " + roomID + " is reserved.");
         }
@@ -218,15 +219,29 @@ public class Hotel implements HotelInterface {
         return guests;
     }
 
-    public void showGuests() {
+//    public void showGuests() {
+//        ArrayList<Client> guests = getGuests();
+//        for (Client guest : guests) {
+//            System.out.println("Guest [" + guest.getID() + "]: " +
+//                    guest.getFirstName() + " " + guest.getLastName() + ", " +
+//                    guest.getSex() + ".");
+//            System.out.println("Address: " + guest.getAddress());
+//            System.out.println();
+//        }
+//    }
+
+    public String showGuests() {
         ArrayList<Client> guests = getGuests();
+        String res = "";
         for (Client guest : guests) {
-            System.out.println("Guest [" + guest.getID() + "]: " +
+            res += "Guest [" + guest.getID() + "]: " +
                     guest.getFirstName() + " " + guest.getLastName() + ", " +
-                    guest.getSex() + ".");
-            System.out.println("Address: " + guest.getAddress());
+                    guest.getSex() + ".\n" + "Address: " + guest.getAddress();
+//            System.out.println("Address: " + guest.getAddress());
+            System.out.println(res);
             System.out.println();
         }
+        return res;
     }
 
 

@@ -1,5 +1,7 @@
 package hotel;
 
+import java.time.Month;
+
 public class EarlyReservationDiscount extends RoomCostDecorator {
     // Discount for early reservation
 

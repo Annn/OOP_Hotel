@@ -1,7 +1,6 @@
 package hotel;
 
 public class Guest extends Client {
-
     public Guest(int id,
                  String firstName,
                  String lastName,
@@ -10,5 +9,4 @@ public class Guest extends Client {
         super(id, firstName, lastName, sex, address);
         this.type = "guest";
     }
-
 }
