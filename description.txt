@@ -1,0 +1,62 @@
+HOTEL RESERVATION SYSTEM
+by Hanna Vasiutina and Vitalii Naumov
+
+
+The system contains the main functionality for hotel management operations.
+It allows developers to implement such operations as:
+  * room operations:
+      - adding and removing rooms to database,
+      - searching for free rooms with the given parameters;
+  * reservation operations:
+      - creating the reservation,
+      - searching for the reservation,
+      - obtaining information on the given reservation,
+      - removing the reservation;
+  * guest operations:
+      - obtaining information on guests.
+
+The listed operations are implemented as public methods of the Hotel class,
+implemented as a singleton.
+To run the system, the instance of the Hotel class should be created.
+
+
+1. Room operations
+
+Information on the hotel rooms could be loaded from csv-file.
+Also, rooms could be created as instances of the RoomInformation class,
+and saved to csv-file.
+There two types of rooms are supported: standard room and lux room (they
+are instantiated as objects of the StandardRoom and LuxRoom, correspondingly).
+The room prices are differentiated with the help of decorator classes,
+representing early reservation discount, discount for regular clients,
+and seasonal discount.
+For the given parameters (the room capacities), the search of free (not reserved)
+rooms could be performed.
+
+2. Reservation operations
+
+The hotel room reservation is being created with the help of the
+ReservationInformation class. The instance of this class contains information
+on the reservation period and the list of rooms capacities to be reserved.
+The reservation period should be presented as an instance of the
+ReservationPeriod class, which uses java.time.LocalDate in order to locate
+data on the beginning and the end of the period.
+The Hotel class contains methods implementing the procedures of the reservation
+search, obtaining the reservation data, and removing the reservation. Only the
+system users with the administrator privileges could cancel the reservation.
+There are two types of the hotel system users foreseen: the guest and the
+administrator (they are implemented in the Guest and the Administrator classes,
+which inherit the Client abstract class).
+
+3. Guest operations
+
+The Hotel class contains the methods allowing users to obtain information on
+the hotel guests: the getGuests method returns the list of users, which have
+the "guest" type (excluding administrators), and the showGuests method prints
+out the information to the console.
+
+
+The example of the described functionality use is presented in the Main class,
+as well as in the provided tests.
+As it was mentioned above, the proposed implementation of the hotel reservation
+system uses two design patterns: Singleton and Decorator.

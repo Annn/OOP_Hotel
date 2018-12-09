@@ -1,7 +1,7 @@
 # System rezerwacji w hotelu
 
-W tym ćwiczeniu mają Państwo za zadanie napisać prosty system rezerwacji dla hotelu.
-System powinien umożliwiać:
+W tym ćwiczeniu mają Państwo za zadanie napisać prosty system rezerwacji
+dla hotelu. System powinien umożliwiać:
 
 *   Wyszukiwanie wolnych pokoi zgodnie z zadanymi kryteriami
 *   Dokonywanie rezerwacji
@@ -9,14 +9,15 @@ System powinien umożliwiać:
 *   Usuwanie rezerwacji
 *   Wyświetlanie informacji o rezerwacji
 *   Wyświetlanie informacji o gościach hotelowych
-*   Dodawanie/ usuwanie pokoi
-*   Dodawanie/ usuwanie użytkowników (???)
-
+*   Dodawanie/usuwanie pokoi
+*   Dodawanie/usuwanie użytkowników (???)
 
 Wszystkie informacje mają być przechowywane persystentnie w postaci plików CSV
 (Coma Separated Values).
 
-Fasadą do systemu  jest klasa `hotel.RoomInformation.Hotel` udostępniająca następujący interfejs:
+Fasadą do systemu  jest klasa `hotel.RoomInformation.Hotel` udostępniająca
+następujący interfejs:
+
 ````
 interface hotel.RoomInformation.Hotel {
     void loadRooms(Reader reader);
@@ -53,8 +54,8 @@ System musi również uwzględniać
 Cena zależy od wielkości pokoju (ilości miejsc) oraz od „komfortu” danego pokoju.
 Stali klienci również mają zniżki na korzystanie z pokoi.
 
-Rezerwacji może dokonać klient oraz recepcjonista
-(np. na telefoniczne polecenie klienta).
+Rezerwacji może dokonać klient oraz recepcjonista (np. na telefoniczne
+polecenie klienta).
 Recepcjonista (administrator) musi również mieć możliwość usuwania rezerwacji
 (np. w przypadku braku możliwości potwierdzenia danych osobowych).
 

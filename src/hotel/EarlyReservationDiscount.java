@@ -13,6 +13,7 @@ public class EarlyReservationDiscount extends RoomCostDecorator {
         this.room = room;
         this.period = period;
     }
+
     @Override
     public String getDescription() {
         return room.getDescription() + " with discount for early reservation";

@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class ReservationPeriodTest {
+
     ReservationPeriod period;
-//        System.out.println(period.getPeriod() + " " + period.getDays() + " days");
+
     @Before
     public void initialize() {
-        period = new ReservationPeriod(2018, 10, 10, 2018, 10, 22);
+        period = new ReservationPeriod(2018, 10, 10,
+                                       2018, 10, 22);
     }
 
     @Test

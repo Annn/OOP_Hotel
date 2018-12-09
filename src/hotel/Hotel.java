@@ -190,7 +190,7 @@ public class Hotel implements HotelInterface {
                     " person(s)]: from " +
                     r.getInformation().getPeriod().getPeriod().get(0) + " to " +
                     r.getInformation().getPeriod().getPeriod().get(1) + ".");
-            System.out.println();
+            //System.out.println();
         }
 
     }
@@ -226,23 +226,7 @@ public class Hotel implements HotelInterface {
                     guest.getFirstName() + " " + guest.getLastName() + ", " +
                     guest.getSex() + ".");
             System.out.println("Address: " + guest.getAddress());
-            System.out.println();
         }
     }
-
-//    public String showGuests() {
-//        ArrayList<Client> guests = getGuests();
-//        String res = "";
-//        for (Client guest : guests) {
-//            res += "Guest [" + guest.getID() + "]: " +
-//                    guest.getFirstName() + " " + guest.getLastName() + ", " +
-//                    guest.getSex() + ".\n" + "Address: " + guest.getAddress();
-////            System.out.println("Address: " + guest.getAddress());
-//            System.out.println(res);
-//            System.out.println();
-//        }
-//        return res;
-//    }
-
 
 }

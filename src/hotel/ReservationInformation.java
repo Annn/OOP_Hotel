@@ -27,10 +27,10 @@ public class ReservationInformation implements ReservationInfoInterface {
     }
 
     public int getRoomCost(String type){
-        if (type == "lux"){
+        if (type == "lux") {
             room = new LuxRoom((RoomInformation) roomInformation);
         }
-        else if(type == "standard"){
+        else if (type == "standard") {
             room = new StandardRoom((RoomInformation) roomInformation);
         }
         int cost = room.cost();
@@ -38,5 +38,4 @@ public class ReservationInformation implements ReservationInfoInterface {
         System.out.println(room.description + " costs " + cost);
         return cost;
     }
-
 }

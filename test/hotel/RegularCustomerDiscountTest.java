@@ -6,8 +6,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RegularCustomerDiscountTest {
-//    Tests for description and cost for Lux and Regular rooms
-//    for 1, 2 or 3 persons
+    // Tests for description and cost for Lux and Regular rooms
+    // for 1, 2 or 3 persons
 
     RoomCost luxRoom1, luxRoom2, luxRoom3; // 1, 2 and 3-person lux room
     RoomCost standardRoom1, standardRoom2, standardRoom3; // 1, 2 and 3-person standard room
@@ -45,33 +45,19 @@ public class RegularCustomerDiscountTest {
     }
 
     @Test
-    public void cost() {
-//        Lux room test
-
-//        int expected = 135;
-//        int actual = room1.cost();
-//        assertEquals(expected, actual);
-
-//        int expected = 153;
-//        int actual = room2.cost();
-//        assertEquals(expected, actual);
-
-//        int expected = 162;
-//        int actual = luxRoom3.cost();
-//        assertEquals(expected, actual);
-
-//        Standard room check
-
-        int expected = 90;
-        int actual = standardRoom1.cost();
-        assertEquals(expected, actual);
-
-        int expected1 = 117;
-        int actual1 = standardRoom2.cost();
-        assertEquals(expected1, actual1);
-
-        int expected2 = 135;
-        int actual2 = standardRoom3.cost();
-        assertEquals(expected2, actual2);
+    public void cost1() {
+        // Lux room test
+        assertEquals(135, luxRoom1.cost());
+        assertEquals(153, luxRoom2.cost());
+        assertEquals(162, luxRoom3.cost());
     }
+
+    @Test
+    public void cost2() {
+        // Standard room test
+        assertEquals(90, standardRoom1.cost());
+        assertEquals(117, standardRoom2.cost());
+        assertEquals(135, standardRoom3.cost());
+    }
+
 }
